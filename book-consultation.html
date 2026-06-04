@@ -337,7 +337,11 @@
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 12px; }
     }
-  </style>
+  
+    .systeme-form-embed { width: 100%; }
+    .systeme-form-embed iframe { width: 100% !important; max-width: 100%; border: 0; }
+    .book-consultation-form { margin-top: 6px; }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -428,35 +432,9 @@
 </div>
 <div class="consult-card-main">
 <div class="card-label">Request Your Consultation</div>
-<form data-demo="">
-<div class="form-group">
-<label for="full-name">Full Name <span class="req">*</span></label>
-<input id="full-name" placeholder="Enter your full name" required="" type="text"/>
+<div class="systeme-form-embed book-consultation-form">
+<script id="form-script-tag-24272649" src="https://flortranadvisory.systeme.io/public/remote/page/41481709e6c96d9c149d10e38757c31bc6ca149f.js"></script>
 </div>
-<div class="form-group">
-<label for="work-email">Work Email <span class="req">*</span></label>
-<input id="work-email" placeholder="Enter your work email" required="" type="email"/>
-</div>
-<div class="form-group">
-<label for="need">What do you need? <span class="req">*</span></label>
-<select id="need" required="">
-<option disabled="" selected="" value="">Select an option</option>
-<option>Business Valuation</option>
-<option>Financial Modeling</option>
-<option>Investment Readiness Review</option>
-<option>Not sure yet</option>
-</select>
-</div>
-<div class="form-group">
-<label for="message">Message (optional)</label>
-<textarea id="message" placeholder="Tell us a bit about your company, goals, or specific challenges."></textarea>
-</div>
-<button class="form-submit" type="submit">Submit Consultation Request <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-<div class="form-secure">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewbox="0 0 24 24"><rect height="10" rx="2" width="16" x="4" y="11"></rect><path d="M8 11V7a4 4 0 018 0v4"></path></svg>
-          Your information is secure and will only be used to schedule your consultation.
-        </div>
-</form>
 </div>
 </div>
 </section>
@@ -596,22 +574,7 @@
   },{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // DEMO FORM
-  document.querySelectorAll('form[data-demo]').forEach(form=>{
-    form.addEventListener('submit',e=>{
-      e.preventDefault();
-      let invalid=false;
-      form.querySelectorAll('[required]').forEach(f=>{ if(!f.value.trim()){ f.style.borderColor='#c0392b'; invalid=true; } else { f.style.borderColor=''; } });
-      if(invalid) return;
-      const btn=form.querySelector('.form-submit'); if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
-      setTimeout(()=>{
-        const ok=document.createElement('div');
-        ok.style.cssText='text-align:center;padding:24px 10px;';
-        ok.innerHTML='<div style="width:54px;height:54px;border-radius:50%;background:rgba(196,154,42,0.15);color:#A07E22;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem;font-weight:700;">&#10003;</div><h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--navy);margin-bottom:6px;">Request received.</h3><p style="font-size:0.86rem;color:var(--text-light);">We&rsquo;ll be in touch within 2&ndash;3 business days. (Demo form &mdash; connect a backend to go live.)</p>';
-        form.replaceWith(ok);
-      },700);
-    });
-  });
+
 </script>
 </body>
 </html>
