@@ -487,7 +487,10 @@
       .nav-links, nav .btn-cta { display: none; }
       .hamburger { display: flex; }
     }
-  </style>
+  
+    .systeme-form-card { min-height: 360px; }
+    .systeme-form-card iframe { width: 100% !important; max-width: 100%; border: 0; }
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -548,46 +551,8 @@
 </div>
 <!-- Right: form -->
 <div class="hero-form">
-<div class="form-card">
-<h3>Get Your Free Guide</h3>
-<p class="form-sub">Instant access. Actionable insights.</p>
-<div class="form-group">
-<label for="fullname">Full Name</label>
-<input id="fullname" placeholder="e.g., Jane Smith" type="text"/>
-</div>
-<div class="form-group">
-<label for="email">Work Email</label>
-<input id="email" placeholder="e.g., jane@company.com" type="email"/>
-</div>
-<div class="form-group">
-<label for="stage">Company Stage</label>
-<select id="stage">
-<option value="">Select your stage</option>
-<option>Pre-seed</option>
-<option>Seed</option>
-<option>Series A</option>
-<option>Series B+</option>
-<option>Growth / Bootstrapped</option>
-</select>
-</div>
-<div class="form-group">
-<label for="timeline">Fundraising Timeline</label>
-<select id="timeline">
-<option value="">Select timeline</option>
-<option>Within 3 months</option>
-<option>3–6 months</option>
-<option>6–12 months</option>
-<option>Not sure yet</option>
-</select>
-</div>
-<button class="btn-download" onclick="handleDownload()">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 18 18"><path d="M9 2v10M5 8l4 4 4-4"></path><path d="M2 15h14"></path></svg>
-        Download the Guide
-      </button>
-<div class="form-privacy">
-<svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6L12 2z"></path><path d="M9 12l2 2 4-4"></path></svg>
-        We respect your privacy. No spam. Unsubscribe anytime.
-      </div>
+<div class="form-card systeme-form-card">
+<script id="form-script-tag-24275051" src="https://flortranadvisory.systeme.io/public/remote/page/41487553a66185b46e0f0237ae6f8b87288028c5.js"></script>
 </div>
 </div>
 </section>
@@ -782,22 +747,6 @@
   },{threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-  // Download handler
-  function handleDownload() {
-    const name  = document.getElementById('fullname').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const stage = document.getElementById('stage').value;
-    const tl    = document.getElementById('timeline').value;
-    if (!name || !email) {
-      alert('Please enter your name and email to download the guide.');
-      return;
-    }
-    // Simulate success
-    const btn = document.querySelector('.btn-download');
-    btn.innerHTML = `<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M2 9l5 5L16 4"/></svg> You're all set! Check your inbox.`;
-    btn.style.background = '#1aaa72';
-    btn.disabled = true;
-  }
 </script>
 </body>
 </html>
