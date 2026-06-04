@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "fixed": [
+    "privacy-policy.html: removed duplicate/corrupted content after first closing </html> tag",
+    "privacy-policy.html: replaced placeholder navigation href=\"#\" links with working relative page links",
+    "terms-of-use.html: replaced placeholder navigation href=\"#\" links with working relative page links",
+    "business-valuation.html, financial-modeling.html, investment-readiness.html: corrected case-studies.html to case-study.html and repaired legal/footer placeholders"
+  ],
+  "internal_link_check": "0 broken internal links found after repair"
+}
